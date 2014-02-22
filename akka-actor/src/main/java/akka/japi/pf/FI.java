@@ -25,7 +25,7 @@ public final class FI {
      * @param i  an instance that the application is performed on
      * @return  the result of the application
      */
-    public R apply(I i) throws Throwable;
+    public R apply(I i) throws Exception;
   }
 
   /**
@@ -43,7 +43,7 @@ public final class FI {
      * @param i2  an instance that the application is performed on
      * @return  the result of the application
      */
-    public R apply(I1 i1, I2 i2) throws Throwable;
+    public R apply(I1 i1, I2 i2) throws Exception;
   }
 
   /**
@@ -72,7 +72,7 @@ public final class FI {
      *
      * @param i  an instance that the application is performed on
      */
-    public void apply(I i) throws Throwable;
+    public void apply(I i) throws Exception;
   }
 
   /**
@@ -88,7 +88,7 @@ public final class FI {
      * @param i1  an instance that the application is performed on
      * @param i2  an instance that the application is performed on
      */
-    public void apply(I1 i1, I2 i2) throws Throwable;
+    public void apply(I1 i1, I2 i2) throws Exception;
   }
 
   /**
@@ -106,7 +106,7 @@ public final class FI {
      * @param i2  an instance that the application is performed on
      * @param i3  an instance that the application is performed on
      */
-    public void apply(I1 i1, I2 i2, I3 i3) throws Throwable;
+    public void apply(I1 i1, I2 i2, I3 i3) throws Exception;
   }
 
   /**
@@ -116,7 +116,7 @@ public final class FI {
     /**
      * The application to perform.
      */
-    public void apply() throws Throwable;
+    public void apply() throws Exception;
   }
 
   /**

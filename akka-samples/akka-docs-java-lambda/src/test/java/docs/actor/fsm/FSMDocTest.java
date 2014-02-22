@@ -63,7 +63,8 @@ public class FSMDocTest {
     {
     //#modifier-syntax
     when(SomeState, matchAnyEvent((msg, data) -> {
-        return goTo(Processing).using(newData).forMax(Duration.create(5, SECONDS)).replying(WillDo);
+        return goTo(Processing).using(newData).
+          forMax(Duration.create(5, SECONDS)).replying(WillDo);
     }));
     //#modifier-syntax
 
@@ -73,7 +74,8 @@ public class FSMDocTest {
 
     //#transition-syntax
     onTransition(
-      matchState(Active, Idle, () -> setTimer("timeout", Tick, Duration.create(1, SECONDS), true)).
+      matchState(Active, Idle, () -> setTimer("timeout",
+        Tick, Duration.create(1, SECONDS), true)).
       state(Active, null, () -> cancelTimer("timeout")).
       state(null, Idle, (f, t) -> log().info("entering Idle from " + f)));
     //#transition-syntax

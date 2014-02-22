@@ -43,7 +43,7 @@ public class FSMStateFunctionBuilder<S, D> {
         }
       },
       new FI.Apply<FSM.Event, FSM.State<S, D>>() {
-        public FSM.State<S, D> apply(FSM.Event e) throws Throwable {
+        public FSM.State<S, D> apply(FSM.Event e) throws Exception {
           @SuppressWarnings("unchecked")
           P p = (P) e.event();
           @SuppressWarnings("unchecked")
@@ -92,7 +92,7 @@ public class FSMStateFunctionBuilder<S, D> {
         }
       },
       new FI.Apply<FSM.Event, FSM.State<S, D>>() {
-        public FSM.State<S, D> apply(FSM.Event e) throws Throwable {
+        public FSM.State<S, D> apply(FSM.Event e) throws Exception {
           @SuppressWarnings("unchecked")
           Q q = (Q) e.stateData();
           return apply.apply(q);
@@ -148,7 +148,7 @@ public class FSMStateFunctionBuilder<S, D> {
         }
       },
       new FI.Apply<FSM.Event, FSM.State<S, D>>() {
-        public FSM.State<S, D> apply(FSM.Event e) throws Throwable {
+        public FSM.State<S, D> apply(FSM.Event e) throws Exception {
           @SuppressWarnings("unchecked")
           D d = (D) e.stateData();
           return apply.apply(d);
@@ -180,7 +180,7 @@ public class FSMStateFunctionBuilder<S, D> {
   public FSMStateFunctionBuilder<S, D> anyEvent(final FI.Apply2<Object, D, FSM.State<S, D>> apply) {
     builder.match(FSM.Event.class,
       new FI.Apply<FSM.Event, FSM.State<S, D>>() {
-        public FSM.State<S, D> apply(FSM.Event e) throws Throwable {
+        public FSM.State<S, D> apply(FSM.Event e) throws Exception {
           @SuppressWarnings("unchecked")
           D d = (D) e.stateData();
           return apply.apply(e.event(), d);

@@ -331,14 +331,16 @@ public class ActorDocTest {
   public void creatingPropsConfig() {
     //#creating-props
     Props props1 = Props.create(MyActor.class);
-    Props props2 = Props.create(ActorWithArgs.class, () -> new ActorWithArgs("arg")); // careful, see below
+    Props props2 = Props.create(ActorWithArgs.class,
+      () -> new ActorWithArgs("arg")); // careful, see below
     Props props3 = Props.create(ActorWithArgs.class, "arg");
     //#creating-props
 
     //#creating-props-deprecated
     // NOT RECOMMENDED within another actor:
     // encourages to close over enclosing class
-    Props props7 = Props.create(ActorWithArgs.class, () -> new ActorWithArgs("arg"));
+    Props props7 = Props.create(ActorWithArgs.class,
+      () -> new ActorWithArgs("arg"));
     //#creating-props-deprecated
   }
 

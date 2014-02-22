@@ -34,7 +34,7 @@ object AbstractActor {
  * }
  * </pre>
  */
-abstract class AbstractActor extends akka.actor.Actor {
+abstract class AbstractActor extends Actor {
   /**
    * Returns this AbstractActor's AbstractActorContext
    * The AbstractActorContext is not thread safe so do not expose it outside of the

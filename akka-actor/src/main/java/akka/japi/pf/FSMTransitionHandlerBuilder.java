@@ -39,7 +39,7 @@ public class FSMTransitionHandlerBuilder<S> {
       },
       new FI.UnitApply<Tuple2>() {
         @Override
-        public void apply(Tuple2 t) throws Throwable {
+        public void apply(Tuple2 t) throws Exception {
           apply.apply();
         }
       }
@@ -68,7 +68,7 @@ public class FSMTransitionHandlerBuilder<S> {
       },
       new FI.UnitApply<Tuple2>() {
         @Override
-        public void apply(Tuple2 t) throws Throwable {
+        public void apply(Tuple2 t) throws Exception {
           @SuppressWarnings("unchecked")
           S sf = (S) t._1();
           @SuppressWarnings("unchecked")
